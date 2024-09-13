@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let bigBang=new Date();
+    </script>
+    <style>
+        *{
+            font-size: 35px;
+            text-align: center;
+        }
+        header{
+            height: 25%;
+            background-color: antiquewhite;
+        }
+        main{
+            height: 65%;
+            background-color: rgb(0, 255, 247);
+        }
+        footer{
+           height: 10%;
+           color:white;
+           background-color: gray;
+        }
+    </style>
+    <script>
+        console.log("加载css代码："+(new Date()-bigBang)+'ms!');
+    </script>
+</head>
+<body>
+    <header>    
+        welcome to my website
+    </header>
+    <main>  
+       xxz
+    </main>
+    <footer>    
+       江西科技师范大学22计科2班陈紫轩
+    </footer>
+    <script>
+       document.body.style.height=innerHeight-18+'px';
+       console.log("渲染web页元素："+(new Date()-bigBang)+"ms!");
+       let timer=new Date();
+       for(let i=1;i<1e8;i++){
+
+       }
+       console.log("cpu从1数到1亿："+(new Date()-timer)+"ms!")
+    </script>
+</body>
+</html>
