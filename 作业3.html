@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let bigBang=new Date();
+    </script>
+    <style>
+        *{
+            margin:0;
+            font-size: 35px;
+            text-align: center;
+        }
+        p{
+            border:1px solid blueviolet;
+        }
+        header{
+            height: 25%;
+            background-color: antiquewhite;
+        }
+        main{
+            height: 65%;
+            background-color: rgb(0, 255, 247);
+        }
+        footer{
+           height: 10%;
+           color:white;
+           background-color: gray;
+        }
+    </style>
+    <script>
+        console.log("加载css代码："+(new Date()-bigBang)+'ms!');
+    </script>
+</head>
+<body>
+    <header>
+      我的项目CET6
+    </header>
+    <main>
+      <p id="word">abandon</p>
+      <p id="pron">/ə'bændən/</p>
+      <p id="chinese">vt.离弃,丢弃;遗弃,抛弃;放弃</p>
+    </main>
+    <footer>
+       江西科技师范大学22计科2班陈紫轩
+    </footer>
+    <script>
+       document.body.style.height=innerHeight-18+'px';
+       console.log("渲染web页元素："+(new Date()-bigBang)+"ms!");
+       let timer=new Date();
+       for(let i=1;i<1e8;i++){
+
+       }
+       console.log("cpu从1数到1亿："+(new Date()-timer)+"ms!") 
+
+       let strCET6='';
+       let arrCET6=[];
+       fetch('cet6.txt')
+       .then(res=>res.text())
+       .then(txt=>{
+        strCET6 = txt;
+        arrCET6=strCET6.split('\r\n');
+        let rand=Math.floor(arrCET6.length*Math.random());
+        let cetword=arrCET6[rand];
+        let begin=cetword.indexOf('\t');
+        let end=cetword.lastIndexOf('\t');
+        let word=cetword.slice(0,begin);
+        let pron=cetword.slice(begin+1,end);
+        let chinese=cetword.slice(end+1);
+         select('#word').textContent=word;
+         select('#pron').textContent=pron;
+         select('#chinese').textContent=chinese;
+       });
+       function select(str){
+        let dom=document.querySelector(str);
+        return dom;
+       }
+    </script>
+</body>
+</html>
